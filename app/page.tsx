@@ -1,3 +1,12 @@
 export default function Home() {
-  return <>Home</>;
+  return (
+    <>
+      <main>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+      </main>
+    </>
+  );
 }
