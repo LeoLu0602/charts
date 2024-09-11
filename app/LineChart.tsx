@@ -47,7 +47,7 @@ export default function LineChart() {
   };
 
   return (
-    <section className="h-80">
+    <section className="h-80 mt-4">
       <Line options={options} data={FAKE_DATA} />
     </section>
   );

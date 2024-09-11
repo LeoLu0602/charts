@@ -29,7 +29,7 @@ export default function PieChart() {
   };
 
   return (
-    <section className="h-80">
+    <section className="h-80 mt-4">
       <Pie options={options} data={FAKE_DATA} />
     </section>
   );

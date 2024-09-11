@@ -22,7 +22,7 @@ export default function CandlestickChart() {
   };
 
   return (
-    <section className="">
+    <section className="mt-4">
       <Chart
         chartType="CandlestickChart"
         width="640px"

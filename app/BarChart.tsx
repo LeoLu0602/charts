@@ -39,7 +39,7 @@ export default function BarChart() {
   };
 
   return (
-    <section className="h-80">
+    <section className="h-80 mt-4">
       <Bar options={options} data={FAKE_DATA} />
     </section>
   );
