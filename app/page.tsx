@@ -10,6 +10,7 @@ export default async function Home() {
   const candlestickData = await axios.get(API_URL + '/candlestick-data');
   const lineData = await axios.get(API_URL + '/line-chart-data');
   const barData = await axios.get(API_URL + '/bar-chart-data');
+  const pieData = await axios.get(API_URL + '/pie-chart-data');
 
   return (
     <>
@@ -18,7 +19,7 @@ export default async function Home() {
         <CandlestickChart candlestickData={candlestickData.data} />
         <LineChart lineData={lineData.data} />
         <BarChart barData={barData.data} />
-        <PieChart />
+        <PieChart pieData={pieData.data} />
       </main>
     </>
   );
