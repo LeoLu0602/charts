@@ -22,25 +22,31 @@ ChartJS.register(
   Legend
 );
 
-const FAKE_DATA = {
-  labels: ['Jan', 'Feb', 'Mar', 'Apr'],
-  datasets: [
-    {
-      label: '',
-      data: [10, 20, 30, 40],
-      borderColor: 'rgb(75, 192, 192)',
-    },
-  ],
-};
+interface LineDataType {
+  labels: string[];
+  data: number[];
+}
 
-export default function LineChart() {
+export default function LineChart({ lineData }: { lineData: LineDataType }) {
   const options = {
     aspectRatio: 2,
   };
 
   return (
     <section className="h-80 mt-4">
-      <Line options={options} data={FAKE_DATA} />
+      <Line
+        options={options}
+        data={{
+          labels: lineData.labels,
+          datasets: [
+            {
+              label: '',
+              data: lineData.data,
+              borderColor: 'rgb(75, 192, 192)',
+            },
+          ],
+        }}
+      />
     </section>
   );
 }
