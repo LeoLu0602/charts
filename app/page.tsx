@@ -4,7 +4,7 @@ import LineChart from './LineChart';
 import BarChart from './BarChart';
 import PieChart from './PieChart';
 
-const API_URL = 'http://127.0.0.1:8000/api';
+const API_URL = 'https://charts-api-qwx6.onrender.com/api';
 
 export default async function Home() {
   let candlestickData, lineData, barData, pieData;
