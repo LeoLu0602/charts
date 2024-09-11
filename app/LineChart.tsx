@@ -33,7 +33,7 @@ export default function LineChart({ lineData }: { lineData: LineDataType }) {
   };
 
   return (
-    <section className="h-80 mt-4">
+    <section className="h-80 mt-8">
       <Line
         options={options}
         data={{

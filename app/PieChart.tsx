@@ -16,7 +16,7 @@ export default function PieChart({ pieData }: { pieData: PieDataType }) {
   };
 
   return (
-    <section className="h-80 mt-4">
+    <section className="h-80 mt-8">
       <Pie
         options={options}
         data={{

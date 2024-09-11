@@ -31,7 +31,7 @@ export default function BarChart({ barData }: { barData: BarDataType }) {
   };
 
   return (
-    <section className="h-80 mt-4">
+    <section className="h-80 mt-8">
       <Bar
         options={options}
         data={{
