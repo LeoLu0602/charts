@@ -25,25 +25,27 @@ export default function CandlestickChart({
   };
 
   return (
-    <section className="mt-8">
+    <>
       {candlestickData && (
-        <Chart
-          chartType="CandlestickChart"
-          width="640px"
-          height="320px"
-          data={[
-            ['x', '', '', '', ''],
-            ...candlestickData.map(({ x, open, high, low, close }) => [
-              x,
-              low,
-              open,
-              close,
-              high,
-            ]),
-          ]}
-          options={options}
-        />
+        <section className="mt-8">
+          <Chart
+            chartType="CandlestickChart"
+            width="640px"
+            height="320px"
+            data={[
+              ['x', '', '', '', ''],
+              ...candlestickData.map(({ x, open, high, low, close }) => [
+                x,
+                low,
+                open,
+                close,
+                high,
+              ]),
+            ]}
+            options={options}
+          />
+        </section>
       )}
-    </section>
+    </>
   );
 }

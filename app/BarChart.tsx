@@ -31,22 +31,24 @@ export default function BarChart({ barData }: { barData: BarDataType | null }) {
   };
 
   return (
-    <section className="h-80 mt-8">
+    <>
       {barData && (
-        <Bar
-          options={options}
-          data={{
-            labels: barData.labels,
-            datasets: [
-              {
-                label: 'Sales',
-                data: barData.data,
-                backgroundColor: ['rgb(75, 192, 192)'],
-              },
-            ],
-          }}
-        />
+        <section className="h-80 mt-8">
+          <Bar
+            options={options}
+            data={{
+              labels: barData.labels,
+              datasets: [
+                {
+                  label: 'Sales',
+                  data: barData.data,
+                  backgroundColor: ['rgb(75, 192, 192)'],
+                },
+              ],
+            }}
+          />
+        </section>
       )}
-    </section>
+    </>
   );
 }

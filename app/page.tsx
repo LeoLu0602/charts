@@ -8,6 +8,7 @@ const API_URL = 'http://127.0.0.1:8000/api';
 
 export default async function Home() {
   let candlestickData, lineData, barData, pieData;
+  let isApiFailed = false;
 
   try {
     [candlestickData, lineData, barData, pieData] = await Promise.all([
@@ -17,18 +18,23 @@ export default async function Home() {
       axios.get(API_URL + '/pie-chart-data'),
     ]);
   } catch (error) {
-    alert('Fetching Error');
     console.error('Fetching Error: ', error);
+    isApiFailed = true;
   }
 
   return (
     <>
-      <main>
+      <main className="">
         <h1 className="font-bold text-3xl">Charts</h1>
         <CandlestickChart candlestickData={candlestickData?.data ?? null} />
         <LineChart lineData={lineData?.data ?? null} />
         <BarChart barData={barData?.data ?? null} />
         <PieChart pieData={pieData?.data ?? null} />
+        {isApiFailed && (
+          <section className="bg-rose-500 fixed left-4 bottom-4 px-8 py-4 text-white font-bold rounded-lg">
+            API Failed
+          </section>
+        )}
       </main>
     </>
   );
