@@ -24,6 +24,7 @@ const FAKE_DATA = {
   labels: ['Rent', 'Groceries', 'Utilities', 'Entertainment', 'Transportation'],
   datasets: [
     {
+      label: 'Expenses',
       data: [1200, 300, 150, 180, 100],
       backgroundColor: ['rgba(255, 99, 132, 0.2)'],
       borderColor: ['rgba(54, 162, 235, 1)'],
@@ -38,10 +39,8 @@ export default function BarChart() {
   };
 
   return (
-    <>
-      <section className="w-2/5 m-4 font-bold">
-        <Bar options={options} data={FAKE_DATA} />
-      </section>
-    </>
+    <section className="h-80">
+      <Bar options={options} data={FAKE_DATA} />
+    </section>
   );
 }

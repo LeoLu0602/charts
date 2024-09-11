@@ -25,11 +25,11 @@ const FAKE_DATA = {
 
 export default function PieChart() {
   const options = {
-    aspectRatio: 2,
+    aspectRatio: 1,
   };
 
   return (
-    <section className="w-2/5 m-4 font-bold">
+    <section className="h-80">
       <Pie options={options} data={FAKE_DATA} />
     </section>
   );

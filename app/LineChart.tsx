@@ -43,14 +43,12 @@ const FAKE_DATA = {
 
 export default function LineChart() {
   const options = {
-    aspectRatio: 1.5,
+    aspectRatio: 2,
   };
 
   return (
-    <>
-      <section className="w-1/3">
-        <Line options={options} data={FAKE_DATA} />
-      </section>
-    </>
+    <section className="h-80">
+      <Line options={options} data={FAKE_DATA} />
+    </section>
   );
 }

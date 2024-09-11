@@ -1,20 +1,17 @@
+import CandlestickChart from './CandlestickChart';
+import LineChart from './LineChart';
+import BarChart from './BarChart';
+import PieChart from './PieChart';
+
 export default function Home() {
   return (
     <>
-      <main>
-        <h1>Charts</h1>
-        <section>
-          <h2>Candlestick Chart</h2>
-        </section>
-        <section>
-          <h2>Line Chart </h2>
-        </section>
-        <section>
-          <h2>Bar Chart</h2>
-        </section>
-        <section>
-          <h2>Pie Chart</h2>
-        </section>
+      <main className="">
+        <h1 className="font-bold text-3xl">Charts</h1>
+        <CandlestickChart />
+        <LineChart />
+        <BarChart />
+        <PieChart />
       </main>
     </>
   );
