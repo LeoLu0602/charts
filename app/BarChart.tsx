@@ -11,6 +11,11 @@ import {
   Legend,
 } from 'chart.js';
 
+interface BarDataType {
+  labels: string[];
+  data: number[];
+}
+
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -20,25 +25,26 @@ ChartJS.register(
   Legend
 );
 
-const FAKE_DATA = {
-  labels: ['Product A', 'Product B', 'Product C'],
-  datasets: [
-    {
-      label: 'Sales',
-      data: [100, 150, 200],
-      backgroundColor: ['rgb(75, 192, 192)'],
-    },
-  ],
-};
-
-export default function BarChart() {
+export default function BarChart({ barData }: { barData: BarDataType }) {
   const options = {
     aspectRatio: 2,
   };
 
   return (
     <section className="h-80 mt-4">
-      <Bar options={options} data={FAKE_DATA} />
+      <Bar
+        options={options}
+        data={{
+          labels: barData.labels,
+          datasets: [
+            {
+              label: 'Sales',
+              data: barData.data,
+              backgroundColor: ['rgb(75, 192, 192)'],
+            },
+          ],
+        }}
+      />
     </section>
   );
 }
