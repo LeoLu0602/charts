@@ -16,6 +16,7 @@ export default function CandlestickChart({
   candlestickData: CandlestickDataType[] | null;
 }) {
   const options = {
+    title:'TSMC Stock Prices',
     chartArea: {
       left: 0,
       right: 0,
@@ -27,11 +28,9 @@ export default function CandlestickChart({
   return (
     <>
       {candlestickData && (
-        <section className="mt-8">
+        <section className="max-w-[640px] mt-8">
           <Chart
             chartType="CandlestickChart"
-            width="640px"
-            height="320px"
             data={[
               ['x', '', '', '', ''],
               ...candlestickData.map(({ x, open, high, low, close }) => [

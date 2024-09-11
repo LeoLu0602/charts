@@ -24,8 +24,8 @@ export default async function Home() {
 
   return (
     <>
-      <main className="">
-        <h1 className="font-bold text-3xl">Charts</h1>
+      <main>
+        <h1 className="text-3xl">Charts</h1>
         <CandlestickChart candlestickData={candlestickData?.data ?? null} />
         <LineChart lineData={lineData?.data ?? null} />
         <BarChart barData={barData?.data ?? null} />

@@ -32,21 +32,19 @@ export default function LineChart({
 }: {
   lineData: LineDataType | null;
 }) {
-  const options = {
-    aspectRatio: 2,
-  };
+  const options = {};
 
   return (
     <>
       {lineData && (
-        <section className="h-80 mt-8">
+        <section className="max-w-[640px] mt-8">
           <Line
             options={options}
             data={{
               labels: lineData.labels,
               datasets: [
                 {
-                  label: '',
+                  label: 'Steps',
                   data: lineData.data,
                   borderColor: 'rgb(75, 192, 192)',
                 },

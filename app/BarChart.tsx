@@ -26,14 +26,12 @@ ChartJS.register(
 );
 
 export default function BarChart({ barData }: { barData: BarDataType | null }) {
-  const options = {
-    aspectRatio: 2,
-  };
+  const options = {};
 
   return (
     <>
       {barData && (
-        <section className="h-80 mt-8">
+        <section className="max-w-[640px] mt-8">
           <Bar
             options={options}
             data={{

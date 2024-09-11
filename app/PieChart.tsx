@@ -11,14 +11,12 @@ interface PieDataType {
 ChartJS.register(Tooltip, Legend, ArcElement);
 
 export default function PieChart({ pieData }: { pieData: PieDataType | null }) {
-  const options = {
-    aspectRatio: 1,
-  };
+  const options = {};
 
   return (
     <>
       {pieData && (
-        <section className="h-80 mt-8">
+        <section className="max-w-80 mt-8">
           <Pie
             options={options}
             data={{
