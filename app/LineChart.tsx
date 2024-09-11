@@ -27,26 +27,32 @@ interface LineDataType {
   data: number[];
 }
 
-export default function LineChart({ lineData }: { lineData: LineDataType }) {
+export default function LineChart({
+  lineData,
+}: {
+  lineData: LineDataType | null;
+}) {
   const options = {
     aspectRatio: 2,
   };
 
   return (
     <section className="h-80 mt-8">
-      <Line
-        options={options}
-        data={{
-          labels: lineData.labels,
-          datasets: [
-            {
-              label: '',
-              data: lineData.data,
-              borderColor: 'rgb(75, 192, 192)',
-            },
-          ],
-        }}
-      />
+      {lineData && (
+        <Line
+          options={options}
+          data={{
+            labels: lineData.labels,
+            datasets: [
+              {
+                label: '',
+                data: lineData.data,
+                borderColor: 'rgb(75, 192, 192)',
+              },
+            ],
+          }}
+        />
+      )}
     </section>
   );
 }

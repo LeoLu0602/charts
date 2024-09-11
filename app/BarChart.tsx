@@ -25,26 +25,28 @@ ChartJS.register(
   Legend
 );
 
-export default function BarChart({ barData }: { barData: BarDataType }) {
+export default function BarChart({ barData }: { barData: BarDataType | null }) {
   const options = {
     aspectRatio: 2,
   };
 
   return (
     <section className="h-80 mt-8">
-      <Bar
-        options={options}
-        data={{
-          labels: barData.labels,
-          datasets: [
-            {
-              label: 'Sales',
-              data: barData.data,
-              backgroundColor: ['rgb(75, 192, 192)'],
-            },
-          ],
-        }}
-      />
+      {barData && (
+        <Bar
+          options={options}
+          data={{
+            labels: barData.labels,
+            datasets: [
+              {
+                label: 'Sales',
+                data: barData.data,
+                backgroundColor: ['rgb(75, 192, 192)'],
+              },
+            ],
+          }}
+        />
+      )}
     </section>
   );
 }
