@@ -16,7 +16,10 @@ export default async function Home() {
       axios.get(API_URL + '/bar-chart-data'),
       axios.get(API_URL + '/pie-chart-data'),
     ]);
-  } catch (error) {}
+  } catch (error) {
+    alert('Fetching Error');
+    console.error('Fetching Error: ', error);
+  }
 
   return (
     <>
