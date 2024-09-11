@@ -21,14 +21,12 @@ ChartJS.register(
 );
 
 const FAKE_DATA = {
-  labels: ['Rent', 'Groceries', 'Utilities', 'Entertainment', 'Transportation'],
+  labels: ['Product A', 'Product B', 'Product C'],
   datasets: [
     {
-      label: 'Expenses',
-      data: [1200, 300, 150, 180, 100],
-      backgroundColor: ['rgba(255, 99, 132, 0.2)'],
-      borderColor: ['rgba(54, 162, 235, 1)'],
-      borderWidth: 1,
+      label: 'Sales',
+      data: [100, 150, 200],
+      backgroundColor: ['rgb(75, 192, 192)'],
     },
   ],
 };
